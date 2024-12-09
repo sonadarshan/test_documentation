@@ -52,4 +52,4 @@ jobs:
       # Create and push to gh-pages branch using ghp-import
       - name: Run ghp-import
         run: | 
-          ghp-import -n -p -f docs/_build/html
+          ghp-import -n -p -f documentation/_build/html
