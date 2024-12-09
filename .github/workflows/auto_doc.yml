@@ -55,6 +55,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Use the secret for authentication
         run: |
           # Create and push to gh-pages branch
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git fetch origin gh-pages || git checkout --orphan gh-pages
           git reset --hard
           cp -R documentation/_build/html/* .
