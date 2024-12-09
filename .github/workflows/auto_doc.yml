@@ -49,6 +49,8 @@ jobs:
         run: | 
           cd documentation/
           make html
-      - name: Run ghp-import
-        run: | 
+      - name: Deploy to GitHub Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Use the secret for authentication
+        run: |
           ghp-import -n -p -f documentation/_build/html
