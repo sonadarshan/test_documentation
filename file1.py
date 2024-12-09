@@ -150,3 +150,10 @@ def tan(angle: float) -> float:
         float: The tangent of the angle.
     """
     return math.tan(angle)
+
+def test_abv():
+    """
+    Test add bgc
+    :return:
+    """
+    pass
