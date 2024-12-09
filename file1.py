@@ -151,9 +151,10 @@ def tan(angle: float) -> float:
     """
     return math.tan(angle)
 
-def test():
+def test1():
     """
-    Test add
+    New function added successfully
+
     :return:
     """
     pass
