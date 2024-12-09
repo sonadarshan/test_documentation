@@ -70,7 +70,7 @@ jobs:
           git add .
           git commit -m "Deploy Sphinx docs to gh-pages" || echo "No changes to commit"
 
-      - name: Push to gh-pages branch
+      - name: Push to gh-pages branch 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
