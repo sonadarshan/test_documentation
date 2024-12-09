@@ -65,8 +65,13 @@ jobs:
         run: |
           cp -r documentation/_build/html/* .
 
-      - name: Commit changes and push to gh-pages
+      - name: Commit changes
         run: |
           git add .
-          git commit -m "Deploy Sphinx docs to gh-pages"
-          git push --force origin gh-pages  # Push to the gh-pages branch
+          git commit -m "Deploy Sphinx docs to gh-pages" || echo "No changes to commit"
+
+      - name: Push to gh-pages branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} gh-pages --force
