@@ -49,8 +49,15 @@ jobs:
         run: | 
           cd documentation/
           make html
+      # Create and push to gh-pages branch using ghp-import
       - name: Deploy to GitHub Pages
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Use the secret for authentication 
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Use the secret for authentication
         run: |
-          ghp-import -n -p -f documentation/_build/html
+          # Create and push to gh-pages branch
+          git fetch origin gh-pages || git checkout --orphan gh-pages
+          git reset --hard
+          cp -R documentation/_build/html/* .
+          git add .
+          git commit -m "Deploy Sphinx docs to gh-pages"
+          git push origin gh-pages --force
