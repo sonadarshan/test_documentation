@@ -125,6 +125,17 @@ def sin(angle: float) -> float:
     """
     return math.sin(angle)
 
+def sin_modified(angle: float) -> float:
+    """
+    Calculate the sine of an angle (in radians).
+    modified check on DEc end
+    Args:
+        angle (float): The angle in radians.
+
+    Returns:
+        float: The sine of the angle.
+    """
+    return math.sin(angle)
 
 def cos(angle: float) -> float:
     """
